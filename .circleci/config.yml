@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run:
+          name: "Say Hello"
+          command: echo "CircleCI is successfully configured!"
+
+workflows:
+  welcome:
+    jobs:
+      - build-and-test
